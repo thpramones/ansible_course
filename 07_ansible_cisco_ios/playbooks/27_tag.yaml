@@ -1,0 +1,12 @@
+---
+- name: demo on tags
+  hosts: R3
+  gather_facts: false
+  tasks:
+    - name: configure DNS
+      cisco.ios.ios_config:
+        lines:
+          - ip name-server {{ dns_server }}
+      tags:
+        - dns_config
+        - global_config

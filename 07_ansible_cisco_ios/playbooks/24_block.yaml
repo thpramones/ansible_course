@@ -1,0 +1,31 @@
+---
+- name: Block in Ansible
+  hosts: ciscoIOS
+  gather_facts: false
+  vars:
+    execute_tasks: true
+  tasks:
+    - name: Demo on Block
+      block:
+        - name: Demo on Block
+          ansible.builtin.debug:
+            msg: 'Running first task in Block'
+        
+        - name: Sending show command
+          cisco.ios.ios_command:
+            commands:
+              - show ip int br
+
+        - name: This task will be skipped
+          ansible.builtin.debug:
+            msg: 'This task is running so the above task is not failed'
+      when: execute_tasks
+
+      rescue:
+        - name: Print when errors
+          ansible.builtin.ping:
+          register: ping_status
+
+        - name: Display result
+          ansible.builtin.debug:
+            var: ping_status

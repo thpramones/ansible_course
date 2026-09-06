@@ -1,0 +1,12 @@
+ansible_host: 192.168.174.20
+dns_server: 4.2.2.2
+interface_details:
+  - name: Ethernet0/1
+    description: Connected to WAN
+    ip_address: 20.20.20.1
+    mask: 255.255.255.0
+  - name: Ethernet0/2
+    description: Connected R2
+    ip_address: 10.10.10.1
+    mask: 255.255.255.0
+delay: 5

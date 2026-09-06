@@ -1,0 +1,6 @@
+{% for interface in interface_details %}
+interface {{ interface.name }}
+ description {{ interface.description }}
+ ip {{ interface.ip_address }} {{ interface.mask }}
+ no shutdown
+{% endfor %}

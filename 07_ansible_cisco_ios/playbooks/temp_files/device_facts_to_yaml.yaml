@@ -1,0 +1,105 @@
+ansible_facts:
+  ansible_net_all_ipv4_addresses: [192.168.174.10]
+  ansible_net_all_ipv6_addresses: []
+  ansible_net_api: cliconf
+  ansible_net_config: "Building configuration...\n\nCurrent configuration : 1115 bytes\n!\nversion
+    15.4\nservice config\nservice timestamps debug datetime msec\nservice timestamps
+    log datetime msec\nno service password-encryption\n!\nhostname Branch-R1\n!\nboot-start-marker\nboot-end-marker\n!\n!\n!\nno
+    aaa new-model\nclock timezone UTC -3 0\nmmi polling-interval 60\nno mmi auto-configure\nno
+    mmi pvc\nmmi snmp-timeout 180\n!\n!\n!\n!\n!\n!\n!\n!\n\n\n!\n!\n!\n!\nip domain
+    name cisco.com\nip cef\nno ipv6 cef\n!\nmultilink bundle-name authenticated\n!\n!\n!\n!\n!\n!\n!\n!\nusername
+    admin privilege 15 password 0 cisco123\n!\nredundancy\n!\n!\nip ssh version 2\n!
+    \n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\ninterface Ethernet0/0\n description router-automation\n
+    ip address 192.168.174.10 255.255.255.0\n!\ninterface Ethernet0/1\n description
+    router-automation\n no ip address\n shutdown\n!\ninterface Ethernet0/2\n description
+    router-automation\n no ip address\n shutdown\n!\ninterface Ethernet0/3\n description
+    router-automation\n no ip address\n shutdown\n!\nip forward-protocol nd\n!\n!\nno
+    ip http server\nno ip http secure-server\n!\n!\n!\n!\ncontrol-plane\n!\n!\n!\n!\n!\n!\n!\n!\nline
+    con 0\n privilege level 15\n logging synchronous\nline aux 0\nline vty 0 4\n login
+    local\n transport input ssh\n!\n!\nend"
+  ansible_net_cpu_utilization:
+    core: {five_minutes: 0, five_seconds: 0, five_seconds_interrupt: 0, one_minute: 0}
+  ansible_net_filesystems: ['system:']
+  ansible_net_filesystems_info:
+    'system:': {}
+  ansible_net_gather_network_resources: []
+  ansible_net_gather_subset: [interfaces, hardware, default, config]
+  ansible_net_hostname: Branch-R1
+  ansible_net_image: unix:/opt/unetlab/addons/iol/bin/L3-ADVENTERPRISEK9-M-15.4-2T.bin
+  ansible_net_interfaces:
+    Ethernet0/0:
+      bandwidth: 10000
+      description: router-automation
+      duplex: null
+      ipv4:
+      - {address: 192.168.174.10, subnet: '24'}
+      lineprotocol: up
+      macaddress: aabb.cc00.1000
+      mediatype: null
+      mtu: 1500
+      operstatus: up
+      type: AmdP2
+    Ethernet0/1:
+      bandwidth: 10000
+      description: router-automation
+      duplex: null
+      ipv4: []
+      lineprotocol: down
+      macaddress: aabb.cc00.1010
+      mediatype: null
+      mtu: 1500
+      operstatus: administratively down
+      type: AmdP2
+    Ethernet0/2:
+      bandwidth: 10000
+      description: router-automation
+      duplex: null
+      ipv4: []
+      lineprotocol: down
+      macaddress: aabb.cc00.1020
+      mediatype: null
+      mtu: 1500
+      operstatus: administratively down
+      type: AmdP2
+    Ethernet0/3:
+      bandwidth: 10000
+      description: router-automation
+      duplex: null
+      ipv4: []
+      lineprotocol: down
+      macaddress: aabb.cc00.1030
+      mediatype: null
+      mtu: 1500
+      operstatus: administratively down
+      type: AmdP2
+  ansible_net_iostype: IOS
+  ansible_net_memfree_mb: 809.6599807739258
+  ansible_net_memtotal_mb: 864.1188087463379
+  ansible_net_neighbors:
+    Ethernet0/0:
+    - {host: Switch, ip: null, platform: Linux Unix, port: Ethernet0/0}
+  ansible_net_operatingmode: autonomous
+  ansible_net_python_version: 3.12.3
+  ansible_net_serialnum: '67108880'
+  ansible_net_system: ios
+  ansible_net_version: 15.4(2)T4
+  ansible_network_resources: {}
+changed: false
+deprecations:
+- collection_name: ansible.builtin
+  deprecator: {resolved_name: ansible.builtin, type: null}
+  msg: Importing 'to_bytes' from 'ansible.module_utils._text' is deprecated.
+  version: '2.24'
+- collection_name: ansible.builtin
+  deprecator: {resolved_name: ansible.builtin, type: null}
+  msg: Importing 'to_text' from 'ansible.module_utils._text' is deprecated.
+  version: '2.24'
+- collection_name: ansible.builtin
+  deprecator: {resolved_name: ansible.builtin, type: null}
+  msg: The `ansible.module_utils.common._collections_compat` module is deprecated.
+  version: '2.24'
+- collection_name: ansible.builtin
+  deprecator: {resolved_name: ansible.builtin, type: null}
+  msg: Passing `warnings` to `exit_json` or `fail_json` is deprecated.
+  version: '2.23'
+failed: false

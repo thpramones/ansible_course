@@ -1,0 +1,13 @@
+---
+- name: Demo ios config
+  hosts: R2
+  gather_facts: false
+  tasks:
+    - name: Gather default config
+      cisco.ios.ios_config:
+        src: templates/interface_default_config.cfg
+      register: output
+
+    - name: Display output
+      ansible.builtin.debug:
+        msg: "{{ output }}"
